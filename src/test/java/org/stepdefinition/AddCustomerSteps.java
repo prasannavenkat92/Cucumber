@@ -1,6 +1,7 @@
 package org.stepdefinition;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
@@ -57,7 +58,46 @@ public class AddCustomerSteps {
 		driver.findElement(By.id("telephoneno")).sendKeys(d.get(4));
 	    
 	}
+	
+	@When("user enter all the field.")
+	public void user_enter_all_the_field(DataTable dt)
+	{
+		List<List<String>> d=dt.asLists(String.class);
+		driver.findElement(By.xpath("//label[text()=\"Done\"]")).click();
+		driver.findElement(By.id("fname")).sendKeys(d.get(0).get(0));
+		driver.findElement(By.id("lname")).sendKeys(d.get(1).get(1));
+		driver.findElement(By.id("email")).sendKeys(d.get(2).get(2));
+		driver.findElement(By.name("addr")).sendKeys(d.get(3).get(3));
+		driver.findElement(By.id("telephoneno")).sendKeys(d.get(2).get(4));
+	    
+	}
 
+	
+	@When("user enter all the field1.")
+	public void user_enter_all_the_field1(DataTable dt)
+	{
+		Map<String, String> d=dt.asMap(String.class, String.class);
+		driver.findElement(By.xpath("//label[text()=\"Done\"]")).click();
+		driver.findElement(By.id("fname")).sendKeys(d.get("fname"));
+		driver.findElement(By.id("lname")).sendKeys(d.get("lname"));
+		driver.findElement(By.id("email")).sendKeys(d.get("email"));
+		driver.findElement(By.name("addr")).sendKeys(d.get("address"));
+		driver.findElement(By.id("telephoneno")).sendKeys(d.get("phno"));
+	    
+	}
+	
+	@When("user enter all the field2.")
+	public void user_enter_all_the_field2(DataTable dt)
+	{
+		List<Map<String, String>> d=dt.asMaps(String.class, String.class);
+		driver.findElement(By.xpath("//label[text()=\"Done\"]")).click();
+		driver.findElement(By.id("fname")).sendKeys(d.get(0).get("fn"));
+		driver.findElement(By.id("lname")).sendKeys(d.get(1).get("ln"));
+		driver.findElement(By.id("email")).sendKeys(d.get(2).get("em"));
+		driver.findElement(By.name("addr")).sendKeys(d.get(3).get("ad"));
+		driver.findElement(By.id("telephoneno")).sendKeys(d.get(2).get("mob"));
+	    
+	}
 	@When("user click on submit button")
 	public void user_click_on_submit_button() {
 		driver.findElement(By.name("submit")).click();

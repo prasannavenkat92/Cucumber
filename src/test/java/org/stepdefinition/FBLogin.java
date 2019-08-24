@@ -31,7 +31,7 @@ public class FBLogin {
 
 	@Then("user should navigate to FB Home Page")
 	public void user_should_navigate_to_FB_Home_Page() {
-	    Assert.assertTrue(driver.findElement(By.xpath("//div[text()='News Feed']")).isDisplayed());
+	    Assert.assertTrue(driver.findElement(By.xpath("//strong[text()='Two-factor authentication required']")).isDisplayed());
 	}
 
 

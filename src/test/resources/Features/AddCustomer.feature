@@ -11,14 +11,14 @@ Feature: Add Customer
     And user click on submit button
     Then user should be displayed the customer id is generated
 
-  @tag1
+  @tag2
   Scenario: One dimensional list
     When user enter all the fields.
       | Prasanna Venkatesan | R | xyz@gmail.com | Vriddhachalam | 6756757 |
     And user click on submit button
     Then user should be displayed the customer id is generated
 
-  @tag1
+  @tag3
   Scenario: One dimensional map
     When user enter all the field1.
       | fname   | Prasanna Venkatesan |
@@ -29,7 +29,7 @@ Feature: Add Customer
     And user click on submit button
     Then user should be displayed the customer id is generated
 
-  @tag1
+  @tag1 @tag2
   Scenario: Two dimensional list
     When user enter all the field.
       | Prasanna Venkatesan | R | xyz@gmail.com  | Vriddhachalam |  6756757 |
@@ -39,7 +39,7 @@ Feature: Add Customer
     And user click on submit button
     Then user should be displayed the customer id is generated
 
-  @tag1
+  @tag2
   Scenario: Two dimensional map
     When user enter all the field2.
       | fn                  | ln | em             | ad            | mob      |

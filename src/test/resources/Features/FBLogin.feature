@@ -2,7 +2,7 @@
 Feature: Title of your feature
   I want to use this template for my feature file
 
-  @tag1
+  @tag3
   Scenario: FB Login
     Given user should be in FB Login page
     When user enter valid details
